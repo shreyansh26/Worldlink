@@ -24,6 +24,6 @@ Features include -
 5. Head to `127.0.0.1:8000`
 
 Contributors -  
-* [Shreyansh Singh]
-* [Shorya Jain]
-* [Saurabh Kumar Singh]
+* [Shreyansh Singh](https://github.com/shreyansh26)
+* [Shorya Jain](https://github.com/SJ255)
+* [Saurabh Kumar Singh](https://github.com/saurabh303)
