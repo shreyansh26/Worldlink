@@ -1,0 +1,42 @@
+{% extends 'worldlink/base.html' %}
+{% block title %}Search Results{% endblock %}
+{% load staticfiles %}
+{% block extra_head %}
+<style>
+hr {
+    border-style: inset;
+    border-width: 1px;
+}
+</style>
+{% endblock %}
+{% block content %}
+    <div style="width: 1040px">
+    {% if search_results %}
+        <br><br><br><br><br>
+    {% for i in search_results %}
+      <div class=" row">
+          <div class="col-sm-1">
+          </div>
+          <div class="col-sm-1">
+              {% if i.image_url %}
+              <img src="{% static i.image_url %}" class="thumbnail float-left img-responsive" alt="" width="50px" height="25px" >
+              {% else %}
+              <img src='{% static "photos/profile-default.png" %}' class="thumbnail float-left img-responsive" alt="image unavailable" width="50px" height="25px" >
+              {% endif %}
+          </div>
+          <div class="col-sm-10">
+              <br>
+              <b><a href="{% url 'view_profile' user=i.user|stringformat:"s" %}">{{ i.name }}</a></b><br>
+              {{ i.education }}<br>
+          </div>
+      </div>
+        <hr>
+    {% endfor %}
+  {% else %}
+        <br><br><br>
+        <div class="alert alert-danger">
+          <h2><strong>Sorry!</strong> No results found!</h2>
+        </div>
+  {% endif %}
+    </div>
+{% endblock %}

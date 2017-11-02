@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}WorldLink{% endblock %}</title>
+  {% load staticfiles %}
+  {% load i18n %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include 'worldlink/headers.html' %}
+  {% block extra_head %}
+  {% endblock %}
+  <style>
+        {background-color: rgb(227,231,237);}
+    </style>
+</head>
+    <body>
+        <div class="wrapper">
+        {% if user.is_authenticated %}
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a href="{% url 'home' %}"><h3>WorldLink</h3></a>
+                </div>
+                <ul class="list-unstyled components">
+                  <li><a href="{% url 'home' %}">HOME</a></li>
+                  <li><a href="{% url 'post_list' %}">NEWS FEED</a></li>
+				  <li><a href="{% url 'notifications' %}">NOTIFICATIONS{% block not_count %}{% endblock %}</a></li>
+                  <li><a href="{% url 'meme_gen' %}">MEME GENERATOR</a></li>
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">MESSAGING</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="{% url 'messages_compose' %} " >&raquo;&nbsp;{% trans "CREATE MESSAGE" %}</a></li>
+                            <li><a href="{% url 'messages_inbox' %} ">&raquo;&nbsp;{% trans "INBOX" %}</a></li>
+                            <li><a href="{% url 'messages_outbox' %} " >&raquo;&nbsp;{% trans "SENT MESSAGES" %}</a></li>
+							<li><a href="{% url 'messages_trash' %} " >&raquo;&nbsp;{% trans "TRASH" %}</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'profile' %}">MY PROFILE</a></li>
+                    <li><a href="{% url 'profile-list' %}">ALL PROFILES</a></li>
+                    <li><a href="{% url 'latest-posts' %}">LATEST FEED</a></li>
+                    <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                    <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+                </ul>
+            </nav>
+
+            {% else %}
+
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a href="{% url 'home' %}"><h3>WorldLink</h3></a>
+                </div>
+                <ul class="list-unstyled components">
+                    <li><a href="{% url 'home' %}">HOME</a></li>
+                    <li><a href="{% url 'login' %}">LOGIN/SIGNUP</a></li>
+                    <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+                </ul>
+            </nav>
+
+            {% endif %}
+
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                {% if user.is_authenticated %}
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'search' %}">
+                      <div class="form-group">
+                          <input id="search_box" type="text" class="form-control" name="q" placeholder="Search">
+                      </div>
+                      <button id="search_submit" type="submit" class="btn btn-default">Search</button>
+                </form>
+                        </div>
+                    </div>
+                </nav>
+
+                    {% else %}
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+
+                    {% endif %}
+
+                {% block content %}
+				{% endblock %}
+				
+            </div>
+        </div>
+
+        <!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebar').hide();
+                 $('#sidebarCollapse').toggleClass('active');
+                 $('#sidebar').toggleClass('active');
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                     $(this).toggleClass('active');
+                     $('#sidebar').show();
+                 });
+             });
+         </script>
+    </body>
+</html>

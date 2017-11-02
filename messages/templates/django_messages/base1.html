@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}WorldLink{% endblock %}</title>
+  {% load staticfiles %}
+  {% load i18n %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load staticfiles %}
+  <link rel="shortcut icon" type="image/png" href="{%  static 'images/favicon.png' %}"/>
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+  {% block extra_head %}
+  {% endblock %}
+</head>
+  <body id="myPage">
+        {% if user.is_authenticated %}
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'home' %}"><img src="{%  static 'images/favicon_nav.png' %}" alt=""></a>
+                <a class="navbar-brand" href="{% url 'home' %}">WorldLink</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'search' %}">
+                      <div class="form-group">
+                          <input id="search_box" type="text" class="form-control" name="q" placeholder="Search">
+                      </div>
+                      <button id="search_submit" type="submit" class="btn btn-default">Search</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="{% url 'home' %}">HOME</a></li>
+                  <li><a href="{% url 'post_list' %}">NEWS FEED</a></li>
+                  <li><a href="#portfolio">MEME GENERATOR</a></li>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">MY PROFILE
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{% url 'profile' %}">VIEW PROFILE</a></li>
+                        <li><a href="#">SETTINGS</a></li>
+                        <li><a href="#">ACTIVITY LOG</a></li>
+                        <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          {% else %}
+          <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'home' %}"><img src="{%  static 'images/favicon_nav.png' %}" alt=""></a>
+                <a class="navbar-brand" href="{% url 'home' %}">WorldLink</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="q" value="Search">
+                      </div>
+                      <button type="submit" class="btn btn-default">Search</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="{% url 'login' %}">LOGIN/SIGNUP</a></li>
+                  <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          {% endif %}
+  <!--div class="container"-->
+  <br><br>
+  {% if user.is_authenticated %}
+    <div class="row">
+      <div class="col-md-3">
+        <br><br>
+        <ul class="subnavilist">
+          <li><a href="{% url 'messages_inbox' %} ">&raquo;&nbsp;{% trans "Inbox" %}</a></li>
+          <li><a href="{% url 'messages_outbox' %} ">&raquo;&nbsp;{% trans "Sent Messages" %}</a></li>
+          <li><a href="{% url 'messages_compose' %} ">&raquo;&nbsp;{% trans "New Message" %}</a></li>
+          <li><a href="{% url 'messages_trash' %} ">&raquo;&nbsp;{% trans "Trash" %}</a></li>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+        {% if user.is_authenticated %}
+      </div>
+        {% endif %}
+  </div>
+  </body>
+</html>

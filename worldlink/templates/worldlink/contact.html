@@ -1,0 +1,38 @@
+{% extends 'worldlink/base.html' %}
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+     <br><br>
+	<!--<div class="jumbotron">-->
+		<div class="container" style=margin-right:200px">
+			<div class="row">
+                <br>
+                <div class="col-md-8">
+				<form action="mailto:sssworldlink@gmail.com" method="GET" enctype="text/plain">
+					<strong>NAME</strong><small>(required)<br></small>
+					<input type="text" name="yname" required><br><br>
+					<strong>YOUR EMAIL</strong><small>(required)<br></small>
+					<input type="email" name="mailid" style="width:300px;" required><br><br>
+					<strong>SUBJECT</strong><br>
+					<input type="text" name="subject" style="width:500px;"><br><br>
+					<strong>MESSAGE</strong><small>(required)<br></small>
+					<TEXTAREA name="body" rows="10" cols="80" required>
+				    </TEXTAREA><br><br>
+					<input type="submit" value="Send" class="btn btn-primary">
+				</form>
+                </div>
+				<div class="col-md-4" style="font-family:Comic Sans MS">
+					<br><br><br><br>
+					<strong><div style="color:rgb(244, 104, 66)">EMAIL</div></strong>sssworldlink@gmail.com
+					<br><br>
+					<a href="mailto:sssworldlink@gmail.com"><button type="button" class="btn btn-primary">Send mail</button></a>
+					<br><br>
+					<hr size="1px" width="60%" style="margin-left:0px" ><br>
+					<strong><div style="color:rgb(244, 104, 66)">Contact Number</div></strong>8xxxxxxxxx<br>
+				</div>
+			</div>
+		</div>
+    <!--/div-->
+</div>
+</div>
+{% endblock %}

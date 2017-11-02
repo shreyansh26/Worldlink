@@ -1,0 +1,41 @@
+{% extends 'worldlink/base.html' %}
+{% block not_count %}({{ count }}){% endblock %}
+{% block content %}
+    <div style="width: 1040px">
+    <div class="page-header" >
+    <h1>Notifications</h1>
+    </div>
+      <ul class="all-notifications">
+        {% for notification in notifications %}
+          <li class="clearfix">
+            <div>
+              <p>By {{ notification.sender }} at </p>
+              <small>{{ notification.sent_at }}</small>
+              <p>{{ notification.subject }}</p>
+            </div>
+          </li>
+        {% empty %}
+          <p>You have no inbox notification</p>
+        {% endfor %}
+        {% for like_notification in like_notifications %}
+          <li class="clearfix">
+            <div>
+              <p>{{ like_notification.user }} has liked your post {{ like_notification.post }}</p>
+            </div>
+          </li>
+            {% empty %}
+          <p>You have no like notification</p>
+        {% endfor %}
+        {% for comment_notification in comment_notifications %}
+          <li class="clearfix">
+            <div>
+              <p>{{ comment_notification.author }} has commented on your post {{ comment_notification.post }} at </p>
+              <small>{{ comment_notification.created_date }}</small>
+            </div>
+          </li>
+            {% empty %}
+          <p>You have no comment notification</p>
+        {% endfor %}
+      </ul>
+    </div>
+{% endblock %}

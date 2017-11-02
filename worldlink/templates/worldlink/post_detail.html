@@ -1,0 +1,46 @@
+{% extends 'worldlink/base1.html' %}
+{% load staticfiles %}
+{% block content1 %}
+    <div class="post">
+        {% if user.is_authenticated %}
+          {% if post.author|stringformat:"s" == request.user.username %}
+            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}" name="delete"><span class="glyphicon glyphicon-trash"></span></a>
+            {% else %}
+            {% endif %}
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+        {% if post.image_url %}
+        <img src="{% static post.image_url %}" class="thumbnail float-left img-responsive" alt="" width="200px" height="100px" >
+        {% else %}
+      </br>
+        {% endif %}
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+    </div>
+    <hr>
+        <a class="btn btn-default" href="{% url 'add_comment' pk=post.pk %}">Add comment</a>
+        <br><br>
+       {% for comment in post.comments.all %}
+            {% if user.is_authenticated or comment.approved_comment %}
+            <div class="comment">
+                <strong>{{ comment.author }}</strong>
+                <p>{{ comment.text|linebreaks }}</p>
+                <div class="date">
+                    <small>{{ comment.created_date }}</small>
+                    {% if not comment.approved_comment %}
+                        <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                    {% endif %}
+                    <br><br>
+                </div>
+            </div>
+            {% endif %}
+        {% empty %}
+            <p>No comments here yet :(</p>
+       {% endfor %}
+{% endblock %}

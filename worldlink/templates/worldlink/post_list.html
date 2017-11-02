@@ -1,0 +1,58 @@
+{% extends 'worldlink/base1.html' %}
+{% load staticfiles %}
+{% block content1 %}
+    {% for post in posts %}
+        <div class="post">
+		<div class="row">
+			<div class="col-md-10">
+          <h2><a href="{% url 'post_detail' pk=post.pk %}" style="font-family: Comic Sans MS;color: rgb(2,4,70)">{{ post.title }}</a></h2></div>
+		  <div class="col-md-2" style="margin-top:0.6cm">
+		  {% if post.author|stringformat:"s" == request.user.username %}
+            <h4>- You</h4>
+            {% else %}
+            <h4>- {{ post.author|stringformat:"s" }}</h4>
+            {% endif %}
+			</div></div>
+			{% if post.text|length > 0 %}
+            <div class="container well" style="width: 100%"><p>{{ post.text|linebreaksbr }}</p></div>
+			{% endif %}
+            {% if post.image_url %}
+            <img src="{% static post.image_url %}" class="thumbnail float-left img-responsive" alt="" width="200px" height="100px" >
+            {% else %}
+            {% endif %}
+            <div class="date" style="text-align: right">
+                {{ post.published_date }}
+            </div>
+            <div>
+            <a class ="btn btn-default button" id="btn-update-like" onclick='updateLike({{ post.pk }})' class="top-menu" style="background-color: lightblue">
+                <span class="glyphicon glyphicon-thumbs-up"></span></a></div>
+            <div id="{{ post.pk }}">
+                <br>
+                Liked by {{ post.like_set.all.count }} people
+                <br>
+            </div>
+            <div>
+                <br>
+                <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+                <br>
+            </div>
+
+        </div>
+    {% endfor %}
+    <script>
+    function updateLike(p) {
+      //window.open(document.querySelector('canvas').toDataURL());
+      $.ajax({
+        type: "POST",
+        url: '/ajax/like/',
+        data: {
+          'pk': p,
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+        }
+      }).done(function(o) {
+        if (o.pk == p)
+          $('#'+p).html('<br> Liked by '+ o.num + ' people <br>')
+      });
+    }
+    </script>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'worldlink/base.html' %}
+    {% load staticfiles %}
+            {% block content %}
+                <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+                <br><br><br>
+            {% if user.is_authenticated %}
+                <div class="container">
+                <div class="row">
+                        <div class="page-header col-md-12" style="margin-top: 6px">
+                            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            <center><h1><a href="/newsfeed">{{ user.get_username|title }}'s Feed</a></h1></center>
+                        </div>
+                    </div>
+            </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-10">
+                    {% block content1 %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    {% endblock %}

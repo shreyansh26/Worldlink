@@ -1,0 +1,38 @@
+{% extends 'worldlink/base.html' %}
+{% block title %}Profiles{% endblock %}
+{% load staticfiles %}
+{% block extra_head %}
+<style>
+hr {
+    border-style: inset;
+    border-width: 1px;
+}
+</style>
+{% endblock %}
+{% block content %}
+    <div style="width: 1040px">
+<h1>Profiles</h1>
+<ul>
+  {% for i in object_list %}
+      <div class=" row">
+          <div class="col-sm-1">
+          </div>
+          <div class="col-sm-1">
+              {% if i.image_url %}
+              <img src="{% static i.image_url %}" class="thumbnail float-left img-responsive" alt="" width="50px" height="25px" >
+              {% else %}
+              <img src='{% static "photos/profile-default.png" %}' class="thumbnail float-left img-responsive" alt="image unavailable" width="50px" height="25px" >
+              {% endif %}
+          </div>
+          <div class="col-sm-10">
+              <br>
+              <b><a href="{% url 'view_profile' user=i.user|stringformat:"s" %}">{{ i.name }}</a></b><br>
+              {{ i.education }}<br>
+          </div>
+      </div>
+        <hr>
+  {% endfor %}
+  <p>Response time: {{ response_time.total_seconds }} (Custom MiddleWare :: SocialsiteMiddleware is used)</p>
+</ul>
+</div>
+{% endblock %}

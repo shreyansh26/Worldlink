@@ -1,0 +1,120 @@
+{% extends 'worldlink/base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block extra_head %}
+{% load friendshiptags %}
+{% load staticfiles %}
+<!--link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}"/-->
+{% endblock %}
+
+{% block content %}
+
+  <br>
+  <br>
+  <div class="row" style="width: 1040px">
+    <div class="col-sm-3">
+      <!--{% if profile.url != 'static "photos/profile-default.png"' and profile.url %}
+      <div class="ppic"><img src="{{ profile.url }}" class="profile-pic img-responsive img-circle" alt=''></div>
+      {% else %}
+      <div class="ppic"><img src='{% static "photos/profile-default.png" %}' class="profile-pic img-responsive img-circle" ></div>
+      {% endif %}-->
+      {% if profile.image_url %}
+      <img src="{% static profile.image_url %}" class="thumbnail float-left img-responsive" alt="" width="500px" height="250px" >
+      {% else %}
+      <img src='{% static "photos/profile-default.png" %}' class="thumbnail float-left img-responsive" alt="" width="500px" height="250px" >
+      {% endif %}
+      {% if profile.user == request.user.username or profile == None %}
+      <a id="edit" href="{% url 'edit_profile' %}">Edit Profile</a><br>
+      <a id="reset" href="{% url 'reset' %}">Reset Password</a><br>
+      <a id="edit" href="{% url 'change_password' %}">Change Password</a><br>
+      {% else %}
+      {% endif %}
+      {% if profile.user|stringformat:"s" == request.user.username %}
+      <h4>Followers</h4>
+      <!--{% followers request.user %}-->
+        {% if followers %}
+          {% for usern in followers %}
+            <a href="{% url 'view_profile' user=usern.username|stringformat:"s" %}">{{ usern.username }}</a></br>
+          {% endfor %}
+        {% else %}
+        Nobody is following you!
+        {% endif %}
+      <h4>Following</h4>
+      {% if following %}
+        {% for usern in following %}
+          <a href="{% url 'view_profile' user=usern.username|stringformat:"s" %}">{{ usern.username }}</a></br>
+        {% endfor %}
+      {% else %}
+      You are not following anybody!
+      {% endif %}
+    {% else %}
+    {% endif %}
+    </div>
+    {% if profile.user|stringformat:"s" == request.user.username or profile == None %}
+    {% elif profile.user %}
+      <!--<button data-url="{% url 'follow_user' user_profile=profile.user|stringformat:"s" %}"
+        class="follow-button" type="button">Follow</button>-->
+      {% if val == '1' %}
+      Following
+      <a class="btn btn-default" href="{% url 'unfollow_user' user_profile=profile.user|stringformat:"s" %}" class="button">Unfollow</a>
+      {% else %}
+      <a class="btn btn-default" href="{% url 'follow_user' user_profile=profile.user|stringformat:"s" %}" class="button">Follow</a>
+      {% endif %}
+    {% else %}
+    {% endif %}
+    <div class="col-sm-9">
+      {% if profile %}
+      <h1>{{ profile.name }}</h1>
+      {% else %}
+      <h1>{{ name }}</h1>
+      {% endif %}
+      {% if profile.date_of_birth %}
+      <h1>{{ profile.date_of_birth }}</h1>
+      {% else %}
+      {% endif %}
+      <h1>Hobbies: </h1>
+      {% if profile.hobbies %}
+      <h3>{{ profile.hobbies }}</h3>
+      {% else %}
+      {% endif %}
+      <h1>Education: </h1>
+      {% if profile.education %}
+      <h3>{{ profile.education }}</h3>
+      {% else %}
+      {% endif %}
+
+  </br></br>
+    <div id="postlst">
+    <h1> Your posts </h1>
+      {% if bposts %}
+        {% for post in bposts %}
+        <div class="post">
+            <h1><a href="{% url 'post_detail' pk=post.pk %}" style="font-family: Comic Sans MS;color: rgb(2,4,70)">{{ post.title }}</a></h1>
+            {% if post.text|length > 0 %}
+            <div class="container well" style="width: 100%"><p>{{ post.text|linebreaksbr }}</p></div>
+            {% endif %}
+            <div class="date" style="text-align: right">
+                {{ post.published_date }}
+            </div>
+            {% if post.image_url %}
+            <img src="{% static post.image_url %}" class="thumbnail float-left img-responsive" alt="" width="200px" height="100px" >
+            {% else %}
+            {% endif %}
+        </div>
+      <div>
+        <br>
+        Likes: {{ post.like_set.all.count }}
+        <br>
+    </div>
+    <div>
+        <br>
+        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+        <br>
+    </div>
+    {% endfor %}
+    {% else %}
+    {% endif %}
+    </div>
+    </div>
+
+  </div>
+{% endblock %}

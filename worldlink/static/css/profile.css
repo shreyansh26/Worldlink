@@ -1,0 +1,21 @@
+html, body {
+  margin: 10px;
+
+}
+.profile-pic {
+  width: 20%;
+  text-indent:-9999px;
+}
+
+
+#edit {
+  text-align: right;
+}
+
+.post {
+  margin-left: 8px;
+}
+
+​textarea {
+  vertical-align: top;
+}​

@@ -1,0 +1,19 @@
+{% extends 'worldlink/base.html' %}
+{% block title %}Edit Profile{% endblock %}
+{% block extra_head %}
+{% load staticfiles %}
+<!--link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}"/-->
+{% endblock %}
+
+{% block content %}
+  <br>
+  <br>
+  <form method="POST" class="post_form" enctype='multipart/form-data'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
+
+   </div>
+ </div>
+</form>
+{% endblock %}
