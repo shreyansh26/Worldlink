@@ -1,4 +1,4 @@
-Worldlink
+Worldlink An Amazing Product
 =========
 
 A social networking website using the *Django framework*.  
