@@ -1,9 +1,10 @@
-Worldlink
+Worldlink lets see it together
 =========
 
 A social networking website using the *Django framework*.  
 
-Features include -  
+Features include
+o-  
 1. Authentication (Including social logins)
 2. Newsfeed
 3. Profile page
