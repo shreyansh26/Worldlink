@@ -1,4 +1,4 @@
-Worldlink
+Worldlink an amzing product
 =========
 
 A social networking website using the *Django framework*.  
