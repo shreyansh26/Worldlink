@@ -1,4 +1,4 @@
-Worldlink
+Worldlink- worldlink is an ameging projrct
 =========
 
 A social networking website using the *Django framework*.  
