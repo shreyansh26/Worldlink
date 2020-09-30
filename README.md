@@ -14,6 +14,8 @@ Features include -
 8. Meme Generator
 9. RSS feed
 10. Custom Middleware
+11.Exceedingly scalable.
+12.Reassuringly secure.
 
 ## To run
 
