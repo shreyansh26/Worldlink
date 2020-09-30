@@ -1,5 +1,5 @@
-Worldlink
-=========
+Worldlink- An Amezing project
+=============================
 
 A social networking website using the *Django framework*.  
 
