@@ -1,4 +1,4 @@
-Worldlink
+Worldlink - Amazing Social Website based on Django.
 =========
 
 A social networking website using the *Django framework*.  
