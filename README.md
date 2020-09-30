@@ -1,4 +1,4 @@
-Worldlink
+connectingworld
 =========
 
 A social networking website using the *Django framework*.  
