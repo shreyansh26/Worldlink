@@ -1,4 +1,4 @@
-Worldlink
+Worldlink- An amazing link
 =========
 
 A social networking website using the *Django framework*.  
