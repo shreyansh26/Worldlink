@@ -10,12 +10,15 @@ Features include -
 4. Like and Comment on Posts
 5. Messaging between users
 6. Notifications
-7. Search users
-8. Meme Generator
+7. Search users and friends
+8. Memes Generator
 9. RSS feed
 10. Custom Middleware
+11 Follow users
+13. Personal Groups
+14.Know who viewed yuor profile
 
-## To run
+## To run 
 
 1. Go the root of the project
 2. To create a superuser run - `python manage.py createsuperuser`
