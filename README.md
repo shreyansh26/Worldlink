@@ -23,7 +23,7 @@ Features include -
 4. Run the server - `python manage.py runserver`
 5. Head to `127.0.0.1:8000`
 
-## Contributors  
+## Our Contributors  
 * [Shreyansh Singh](https://github.com/shreyansh26)
 * [Shorya Jain](https://github.com/SJ255)
 * [Saurabh Kumar Singh](https://github.com/saurabh303)
