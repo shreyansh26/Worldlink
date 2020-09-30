@@ -19,7 +19,7 @@ class MessageAdminForm(forms.ModelForm):
     Custom AdminForm to enable messages to groups and all users.
     """
     group = forms.ChoiceField(label=_('group'), required=False,
-        help_text=_('Creates the message optionally for all users or a group of users.'))
+        help_text=_('Creates the message optionally for all users or a group of users suddenly.'))
 
     def __init__(self, *args, **kwargs):
         super(MessageAdminForm, self).__init__(*args, **kwargs)
