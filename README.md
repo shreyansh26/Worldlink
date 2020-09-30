@@ -1,4 +1,4 @@
-Worldlink
+Features
 =========
 
 A social networking website using the *Django framework*.  
@@ -15,7 +15,7 @@ Features include -
 9. RSS feed
 10. Custom Middleware
 
-## To run
+## Go To
 
 1. Go the root of the project
 2. To create a superuser run - `python manage.py createsuperuser`
