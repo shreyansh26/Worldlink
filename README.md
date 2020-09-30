@@ -19,9 +19,10 @@ Features include -
 
 1. Go the root of the project
 2. To create a superuser run - `python manage.py createsuperuser`
-3. Run migrations -  `python manage.py migrate`
-4. Run the server - `python manage.py runserver`
-5. Head to `127.0.0.1:8000`
+3. Make migrations - python manage.py makemigrations
+4. Run migrations -  `python manage.py migrate`
+5. Run the server - `python manage.py runserver`
+6. Head to `127.0.0.1:8000`
 
 ## Contributors  
 * [Shreyansh Singh](https://github.com/shreyansh26)
