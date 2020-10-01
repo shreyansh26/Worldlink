@@ -17,10 +17,10 @@ Features include -
 
 ## To run
 
-1. Go the root of the project
-2. To create a superuser run - `python manage.py createsuperuser`
+1. Go to the root of the project
+2. To create a superuser run - `python manage.py create superuser`
 3. Run migrations -  `python manage.py migrate`
-4. Run the server - `python manage.py runserver`
+4. Run the server - `python manage.py run server`
 5. Head to `127.0.0.1:8000`
 
 ## Contributors  
