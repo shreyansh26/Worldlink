@@ -13,7 +13,7 @@ Features include -
 7. Search users
 8. Meme Generator
 9. RSS feed
-10. Custom Middleware
+10. Custom Middleware in ASP.NET
 
 ## To run
 
