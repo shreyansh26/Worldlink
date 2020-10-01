@@ -15,7 +15,7 @@ Features include -
 9. RSS feed
 10. Custom Middleware
 
-## To run
+## How To Run 
 
 1. Go the root of the project
 2. To create a superuser run - `python manage.py createsuperuser`
