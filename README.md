@@ -4,7 +4,7 @@ Worldlink
 A social networking website using the *Django framework*.  
 
 Features include -  
-1. Authentication (Including social logins)
+1. Authentication (Including Social logins)
 2. Newsfeed
 3. Profile page
 4. Like and Comment on Posts
