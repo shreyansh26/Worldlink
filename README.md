@@ -1,7 +1,8 @@
 Worldlink
 =========
 
-A social networking website using the *Django framework*.  
+Build a Social Media Website with Django ,Just follow steps and you are ready
+
 
 Features include -  
 1. Authentication (Including social logins)
