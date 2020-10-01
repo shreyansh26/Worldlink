@@ -17,7 +17,7 @@ Features include -
 
 ## To run
 
-1. Go the root of the project
+1. Go to the root of the project
 2. To create a superuser run - `python manage.py createsuperuser`
 3. Run migrations -  `python manage.py migrate`
 4. Run the server - `python manage.py runserver`
