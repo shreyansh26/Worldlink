@@ -1,4 +1,4 @@
-Worldlink
+Worldlink basics project
 =========
 
 A social networking website using the *Django framework*.  
