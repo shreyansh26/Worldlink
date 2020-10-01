@@ -1,5 +1,5 @@
-Worldlink
-=========
+Worldlink - An Amazing Social Networking Site
+=============================================
 
 A social networking website using the *Django framework*.  
 
@@ -17,13 +17,14 @@ Features include -
 
 ## To run
 
-1. Go the root of the project
+1. Go to the root of the project
 2. To create a superuser run - `python manage.py createsuperuser`
 3. Run migrations -  `python manage.py migrate`
 4. Run the server - `python manage.py runserver`
 5. Head to `127.0.0.1:8000`
 
-## Contributors  
+## Contributors
+
 * [Shreyansh Singh](https://github.com/shreyansh26)
 * [Shorya Jain](https://github.com/SJ255)
 * [Saurabh Kumar Singh](https://github.com/saurabh303)
