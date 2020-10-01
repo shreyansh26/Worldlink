@@ -1,4 +1,4 @@
-Worldlink
+Worldlinker-A link to world
 =========
 
 A social networking website using the *Django framework*.  
