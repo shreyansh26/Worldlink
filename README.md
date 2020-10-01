@@ -5,7 +5,7 @@ A social networking website using the *Django framework*.
 
 Features include -  
 1. Authentication (Including social logins)
-2. Newsfeed
+2. Newsfeeds
 3. Profile page
 4. Like and Comment on Posts
 5. Messaging between users
