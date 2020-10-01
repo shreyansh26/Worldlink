@@ -1,7 +1,7 @@
 Worldlink
 =========
 
-A social networking website using the *Django framework*.  
+An amazing social networking website using the *Django framework*.  
 
 Features include -  
 1. Authentication (Including social logins)
