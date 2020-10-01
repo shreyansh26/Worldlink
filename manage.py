@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python by manas sharma
 import os
 import sys
 
