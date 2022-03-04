@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2022-03-04T11:00:51.900Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="rnBh1ascX4zhoz840urF" version="16.6.5" type="github">
+<mxfile host="app.diagrams.net" modified="2022-03-04T11:03:59.400Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="CZgP-j_EgDUm9qyjabKy" version="16.6.5" type="github">
   <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
     <mxGraphModel dx="2105" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="dNxyNK7c78bLwvsdeMH5-11" value="Orgchart" style="swimlane;html=1;startSize=20;horizontal=1;containerType=tree;glass=0;" parent="1" vertex="1">
-          <mxGeometry x="-350" y="60" width="970" height="470" as="geometry" />
+        <mxCell id="dNxyNK7c78bLwvsdeMH5-11" value="ORG Structure" style="swimlane;html=1;startSize=20;horizontal=1;containerType=tree;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="-370" y="60" width="970" height="530" as="geometry" />
         </mxCell>
         <UserObject label="Organization" name="Tessa Miller" position="CFO" location="Office 1" email="me@example.com" placeholders="1" link="https://www.draw.io" id="dNxyNK7c78bLwvsdeMH5-12">
           <mxCell style="label;image=https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-3-128.png;whiteSpace=wrap;html=1;rounded=0;glass=0;treeMoving=1;treeFolding=1;" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
@@ -32,7 +32,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="47ftbS8kXGhhVQQJlIoc-35" value="" style="group" vertex="1" connectable="0" parent="dNxyNK7c78bLwvsdeMH5-11">
-          <mxGeometry x="200" y="170" width="700" height="80" as="geometry" />
+          <mxGeometry x="200" y="170" width="700" height="170" as="geometry" />
         </mxCell>
         <UserObject label="Service Recepient" name="Alison Donovan" position="System Admin" location="Office 3" email="me@example.com" placeholders="1" link="https://www.draw.io" id="dNxyNK7c78bLwvsdeMH5-18">
           <mxCell style="label;image=https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-2-128.png;whiteSpace=wrap;html=1;rounded=0;glass=0;" parent="47ftbS8kXGhhVQQJlIoc-35" vertex="1">
@@ -44,6 +44,33 @@
             <mxGeometry width="180" height="80" as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="47ftbS8kXGhhVQQJlIoc-43" value="List" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="47ftbS8kXGhhVQQJlIoc-35">
+          <mxGeometry x="560" y="80" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="47ftbS8kXGhhVQQJlIoc-44" value="Employer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="47ftbS8kXGhhVQQJlIoc-43">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="47ftbS8kXGhhVQQJlIoc-45" value="Employee" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="47ftbS8kXGhhVQQJlIoc-43">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="47ftbS8kXGhhVQQJlIoc-36" value="List" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="dNxyNK7c78bLwvsdeMH5-11">
+          <mxGeometry x="80" y="420" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="47ftbS8kXGhhVQQJlIoc-37" value="Employer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="47ftbS8kXGhhVQQJlIoc-36">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="47ftbS8kXGhhVQQJlIoc-38" value="Employee" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="47ftbS8kXGhhVQQJlIoc-36">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="47ftbS8kXGhhVQQJlIoc-40" value="List" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="dNxyNK7c78bLwvsdeMH5-11">
+          <mxGeometry x="330" y="420" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="47ftbS8kXGhhVQQJlIoc-41" value="Employer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="47ftbS8kXGhhVQQJlIoc-40">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="47ftbS8kXGhhVQQJlIoc-42" value="Employee" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="47ftbS8kXGhhVQQJlIoc-40">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
         <mxCell id="47ftbS8kXGhhVQQJlIoc-2" value="" style="endArrow=blockThin;endFill=1;fontSize=11;edgeStyle=elbowEdgeStyle;elbow=vertical;rounded=0;" edge="1" parent="1" target="47ftbS8kXGhhVQQJlIoc-3">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-80" y="310" as="sourcePoint" />
