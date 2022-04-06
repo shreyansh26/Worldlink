@@ -1,1 +1,42 @@
-<mxfile host="app.diagrams.net" modified="2022-04-06T09:57:17.758Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36" version="16.6.6" etag="ybsVhAFIF8s892sSdqDb" type="github"><diagram id="66ICu8R35jpRn7LBF2Qq">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-04-06T10:04:35.899Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36" etag="XIoTNsC0deo8btcPHEJ8" version="16.6.6" type="github">
+  <diagram id="66ICu8R35jpRn7LBF2Qq" name="Page-1">
+    <mxGraphModel dx="2128" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LLvebhQf9_cgqPC14got-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.06;entryY=0.527;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="LLvebhQf9_cgqPC14got-1" target="LLvebhQf9_cgqPC14got-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LLvebhQf9_cgqPC14got-1" value="Documents" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="20" y="180" width="122.5" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="LLvebhQf9_cgqPC14got-21" value="Passport&lt;br&gt;Birth Certificate&lt;br&gt;Employment &lt;br&gt;Contract" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LLvebhQf9_cgqPC14got-1">
+          <mxGeometry x="11.25" y="40" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LLvebhQf9_cgqPC14got-2" value="OCR REST APIS BASED" style="text;html=1;strokeColor=none;fillColor=#CC99FF;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-130" y="50" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LLvebhQf9_cgqPC14got-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.393;entryY=1.017;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="LLvebhQf9_cgqPC14got-3" target="LLvebhQf9_cgqPC14got-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="430" />
+              <mxPoint x="-93" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LLvebhQf9_cgqPC14got-3" value="REST OCR SERVICES" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#CC99FF;" vertex="1" parent="1">
+          <mxGeometry x="260" y="100" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LLvebhQf9_cgqPC14got-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LLvebhQf9_cgqPC14got-13" target="LLvebhQf9_cgqPC14got-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LLvebhQf9_cgqPC14got-13" value="IPERMIT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99FF99;strokeColor=#00FF00;" vertex="1" parent="1">
+          <mxGeometry x="-140" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LLvebhQf9_cgqPC14got-17" value="Mindee&lt;br&gt;Klippa" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="295" y="70" width="50" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
